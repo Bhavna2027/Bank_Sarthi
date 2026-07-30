@@ -1,0 +1,848 @@
+/* ============================================================================
+   PAGE LAYOUT & SPACING
+   ============================================================================ */
+
+.page-content {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .page-content {
+    padding: 1rem;
+    gap: 1rem;
+  }
+}
+
+/* ============================================================================
+   DASHBOARD - GREETING SECTION
+   ============================================================================ */
+
+.dashboard-greeting {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background: linear-gradient(135deg, rgba(91, 143, 255, 0.08) 0%, rgba(0, 212, 255, 0.04) 100%);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  border: 1px solid rgba(91, 143, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.greeting-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.greeting-subtitle {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .dashboard-greeting {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .greeting-title {
+    font-size: 1.35rem;
+  }
+}
+
+/* ============================================================================
+   METRICS GRID - KEY FINANCIAL INDICATORS
+   ============================================================================ */
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.metric-card {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.metric-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(91, 143, 255, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.metric-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.metric-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.metric-icon-primary {
+  background: linear-gradient(135deg, #5B8FFF 0%, #4873E8 100%);
+  box-shadow: 0 4px 12px rgba(91, 143, 255, 0.3);
+}
+
+.metric-icon-success {
+  background: linear-gradient(135deg, #10b981 0%, #6ee7b7 100%);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.metric-icon-cyan {
+  background: linear-gradient(135deg, #00d4ff 0%, #06b6d4 100%);
+  box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3);
+}
+
+.metric-icon-emerald {
+  background: linear-gradient(135deg, #06b6d4 0%, #10b981 100%);
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+}
+
+.metric-body {
+  position: relative;
+  z-index: 1;
+}
+
+.metric-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.metric-value {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.metric-subtext {
+  font-size: 0.875rem;
+  color: #10b981;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+/* ============================================================================
+   CHARTS SECTION
+   ============================================================================ */
+
+.charts-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .charts-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+.chart-card {
+  padding: 1.5rem;
+}
+
+.chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.chart-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+/* Category Breakdown */
+.category-breakdown {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.category-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.category-color {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.category-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.category-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.category-amount {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+/* ============================================================================
+   TRANSACTIONS CARD
+   ============================================================================ */
+
+.transactions-card {
+  padding: 1.5rem;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.card-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.transactions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.transaction-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 0.75rem;
+  transition: all 250ms ease-in-out;
+}
+
+.transaction-item:hover {
+  background: #f3f4f6;
+  transform: translateX(4px);
+}
+
+.transaction-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.transaction-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.transaction-icon.expense {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.transaction-icon.income {
+  background: linear-gradient(135deg, #10b981 0%, #6ee7b7 100%);
+}
+
+.transaction-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.transaction-merchant {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.transaction-date {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.transaction-amount {
+  font-size: 0.95rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.transaction-amount.expense {
+  color: #ef4444;
+}
+
+.transaction-amount.income {
+  color: #10b981;
+}
+
+/* ============================================================================
+   LEARNING & ACHIEVEMENTS
+   ============================================================================ */
+
+.learning-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .learning-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+.learning-card,
+.achievement-card {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.learning-header,
+.achievement-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.learning-title,
+.achievement-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.learning-badge,
+.achievement-count {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b7280;
+  background: rgba(91, 143, 255, 0.1);
+  padding: 0.375rem 0.75rem;
+  border-radius: 9999px;
+}
+
+.learning-description {
+  font-size: 0.875rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.achievement-badges {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.achievement-badge {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
+}
+
+.achievement-badge.unlocked {
+  background: linear-gradient(135deg, rgba(91, 143, 255, 0.2) 0%, rgba(0, 212, 255, 0.1) 100%);
+  border: 1px solid rgba(91, 143, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(91, 143, 255, 0.15);
+}
+
+.achievement-badge.unlocked:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(91, 143, 255, 0.25);
+}
+
+.achievement-badge.locked {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ============================================================================
+   VOICE ASSISTANT PAGE
+   ============================================================================ */
+
+.voice-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  min-height: calc(100vh - 8rem);
+}
+
+.voice-hero {
+  text-align: center;
+  max-width: 600px;
+}
+
+.voice-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.voice-subtitle {
+  font-size: 1.125rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.voice-button-large {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #5B8FFF 0%, #4873E8 100%);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  box-shadow: 0 20px 40px rgba(91, 143, 255, 0.3);
+  transition: all 300ms ease-in-out;
+  animation: float 3s ease-in-out infinite;
+}
+
+.voice-button-large:hover {
+  transform: scale(1.05);
+  box-shadow: 0 25px 50px rgba(91, 143, 255, 0.4);
+}
+
+.voice-button-large:active {
+  transform: scale(0.95);
+}
+
+.voice-conversation {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.voice-message {
+  display: flex;
+  gap: 1rem;
+  animation: slideUp 300ms ease-out;
+}
+
+.voice-message.user {
+  justify-content: flex-end;
+}
+
+.voice-message-bubble {
+  max-width: 80%;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.voice-message-bubble.ai {
+  background: #f3f4f6;
+  color: #1f2937;
+  border-radius: 1rem 1rem 1rem 0.25rem;
+}
+
+.voice-message-bubble.user {
+  background: linear-gradient(135deg, #5B8FFF 0%, #4873E8 100%);
+  color: white;
+  border-radius: 1rem 1rem 0.25rem 1rem;
+}
+
+/* ============================================================================
+   BANKOPEDIA PAGE
+   ============================================================================ */
+
+.bankopedia-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.bankopedia-search {
+  position: relative;
+  max-width: 600px;
+  margin-bottom: 1rem;
+}
+
+.bankopedia-search input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 1rem;
+  font-size: 1rem;
+  transition: all 250ms ease-in-out;
+}
+
+.bankopedia-search input:focus {
+  outline: none;
+  border-color: #5B8FFF;
+  box-shadow: 0 0 0 4px rgba(91, 143, 255, 0.1);
+}
+
+.bankopedia-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.category-card {
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+}
+
+.category-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.category-name {
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.category-count {
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+.terms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.term-card {
+  padding: 1.5rem;
+  cursor: pointer;
+}
+
+.term-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+}
+
+.term-description {
+  font-size: 0.875rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.term-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* ============================================================================
+   ANALYTICS PAGE
+   ============================================================================ */
+
+.analytics-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.analytics-filters {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.analytics-filter-btn {
+  padding: 0.5rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.625rem;
+  background: white;
+  color: #6b7280;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 150ms ease-in-out;
+}
+
+.analytics-filter-btn.active {
+  background: linear-gradient(135deg, #5B8FFF 0%, #4873E8 100%);
+  color: white;
+  border-color: #5B8FFF;
+}
+
+.analytics-filter-btn:hover {
+  border-color: #5B8FFF;
+}
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.insight-card {
+  padding: 1.5rem;
+}
+
+.insight-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.insight-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.insight-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #5B8FFF;
+}
+
+.insight-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* ============================================================================
+   QUIZZES PAGE
+   ============================================================================ */
+
+.quizzes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.quiz-progress {
+  display: flex;
+  gap: 2rem;
+}
+
+.progress-item {
+  flex: 1;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.progress-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.progress-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.progress-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.quizzes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.quiz-card {
+  padding: 1.5rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.quiz-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.quiz-difficulty {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.65rem;
+  font-weight: 600;
+}
+
+.quiz-difficulty.easy {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+}
+
+.quiz-difficulty.medium {
+  background: rgba(245, 158, 11, 0.1);
+  color: #d97706;
+}
+
+.quiz-difficulty.hard {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+}
+
+.quiz-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.quiz-description {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.quiz-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #9ca3af;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* ============================================================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .charts-section {
+    grid-template-columns: 1fr;
+  }
+
+  .category-breakdown {
+    flex-direction: column;
+  }
+
+  .learning-section {
+    grid-template-columns: 1fr;
+  }
+
+  .quiz-progress {
+    flex-direction: column;
+  }
+
+  .analytics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quizzes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .voice-title {
+    font-size: 1.75rem;
+  }
+
+  .voice-button-large {
+    width: 120px;
+    height: 120px;
+    font-size: 2.5rem;
+  }
+}
